@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
 namespace rabbitmq_receiver
 {
@@ -11,7 +13,9 @@ namespace rabbitmq_receiver
         static void Main(string[] args)
         {
             receiveMessage receiver = new rabbitmq_receiver.receiveMessage();
-            receiver.receiveMessageFromServer("localhost", "queue");            
+            receiver.receiveMessageFromServer("localhost", "queue");
+
+
         }
     }
 }

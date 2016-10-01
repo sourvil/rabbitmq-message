@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RabbitMQ.Client;
 
 namespace rabbitmq_sender
 {
@@ -18,11 +19,12 @@ namespace rabbitmq_sender
                     break;
                 else
                 {
-                    //sm.sendMessageToClient("localhost", "queue", "route1", consoleMessage);
-                    Console.WriteLine(consoleMessage + " is sent to clients");
+                    sm.sendMessageToClient("localhost", "queue", "queue", consoleMessage);
                 }
             }
-            
+
+
+
         }
     }
 }
