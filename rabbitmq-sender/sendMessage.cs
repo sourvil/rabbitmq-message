@@ -7,7 +7,7 @@ using RabbitMQ.Client;
 
 namespace rabbitmq_sender
 {
-    class sendMessage
+    class SendMessage
     {
         public void sendMessageToClient(string hostName,string queueName,string routingKey ,string message)
         {
@@ -15,6 +15,7 @@ namespace rabbitmq_sender
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
+                // durable -- remember if RabbitMQ crashes
                 channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
                 //string message = "Hello World!";

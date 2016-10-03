@@ -12,7 +12,7 @@ namespace rabbitmq_receiver
     {
         static void Main(string[] args)
         {
-            receiveMessage receiver = new rabbitmq_receiver.receiveMessage();
+            ReceiveMessage receiver = new rabbitmq_receiver.ReceiveMessage();
             receiver.receiveMessageFromServer("localhost", "queue");
 
 

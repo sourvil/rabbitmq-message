@@ -11,7 +11,7 @@ namespace rabbitmq_sender
     {
         static void Main(string[] args)
         {
-            sendMessage sm = new rabbitmq_sender.sendMessage();
+            SendMessage sm = new rabbitmq_sender.SendMessage();
             while (true)
             {
                 string consoleMessage = Console.ReadLine();
