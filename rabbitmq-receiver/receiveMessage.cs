@@ -24,7 +24,8 @@ namespace rabbitmq_receiver
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine(" [x] Received {0}", message);
-                };// noAck -- 2 way hand-shake
+                };
+                // noAck -- 2 way hand-shake
                 channel.BasicConsume(queue: queueName, noAck: true, consumer: consumer);
 
                 Console.WriteLine(" Press [enter] to exit.");

@@ -12,10 +12,13 @@ namespace rabbitmq_receiver
     {
         static void Main(string[] args)
         {
-            ReceiveMessage receiver = new rabbitmq_receiver.ReceiveMessage();
-            receiver.receiveMessageFromServer("localhost", "queue");
+            // Single Message
+            //ReceiveMessage receiver = new ReceiveMessage();
+            //receiver.receiveMessageFromServer("localhost", "queue");
 
-
+            // Work Queue
+            Worker worker = new Worker();
+            worker.receiveMessageFromServerWorkQueue("localhost", "task_queue");
         }
     }
 }

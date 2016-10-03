@@ -50,7 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendMessage.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="TaskMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

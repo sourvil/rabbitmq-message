@@ -11,7 +11,21 @@ namespace rabbitmq_sender
     {
         static void Main(string[] args)
         {
-            SendMessage sm = new rabbitmq_sender.SendMessage();
+            // Single Message Send
+            //SendMessage sm = new rabbitmq_sender.SendMessage();
+            //while (true)
+            //{
+            //    string consoleMessage = Console.ReadLine();
+            //    if (consoleMessage.Equals("q") || consoleMessage.Equals("Q"))
+            //        break;
+            //    else
+            //    {
+            //        sm.sendMessageToClient("localhost", "queue", "queue", consoleMessage);
+            //    }
+            //}
+
+            // Single Message Send
+            TaskMessage taskMessage = new TaskMessage();
             while (true)
             {
                 string consoleMessage = Console.ReadLine();
@@ -19,11 +33,9 @@ namespace rabbitmq_sender
                     break;
                 else
                 {
-                    sm.sendMessageToClient("localhost", "queue", "queue", consoleMessage);
+                    taskMessage.sendTaskMessageToClient("localhost", "task_queue", "task_queue", consoleMessage);
                 }
             }
-
-
 
         }
     }
