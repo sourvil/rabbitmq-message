@@ -4,7 +4,7 @@ using RabbitMQ.Client.Events;
 using System.Text;
 using System.Threading;
 
-class Worker
+class WorkerQueueReceiveMessage
 {
     public void receiveMessageFromServerWorkQueue(string hostName, string queueName)
     {

@@ -25,7 +25,7 @@ namespace rabbitmq_sender
             //}
 
             // Single Message Send
-            TaskMessage taskMessage = new TaskMessage();
+            SendTaskQueueMessage taskMessage = new SendTaskQueueMessage();
             while (true)
             {
                 string consoleMessage = Console.ReadLine();

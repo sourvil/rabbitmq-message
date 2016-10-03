@@ -4,7 +4,7 @@ using System.Text;
 
 namespace rabbitmq_sender
 {
-    class TaskMessage
+    class SendTaskQueueMessage
     {
         public void sendTaskMessageToClient(string hostName, string queueName, string routingKey, string message)
         {
