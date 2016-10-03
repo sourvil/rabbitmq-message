@@ -17,8 +17,12 @@ namespace rabbitmq_receiver
             //receiver.receiveMessageFromServer("localhost", "queue");
 
             // Work Queue
-            WorkerQueueReceiveMessage worker = new WorkerQueueReceiveMessage();
-            worker.receiveMessageFromServerWorkQueue("localhost", "task_queue");
+            //ReceiveWorkerQueueMessage worker = new ReceiveWorkerQueueMessage();
+            //worker.receiveMessageFromServerWorkQueue("localhost", "task_queue");
+
+            // Exchange Queue
+            ReceiveExchangeQueue receiveExchangeQueue = new rabbitmq_receiver.ReceiveExchangeQueue();
+            receiveExchangeQueue.receiveMessageFromServerWorkQueue("localhost", "logs", "fanout");
         }
     }
 }

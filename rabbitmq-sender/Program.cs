@@ -24,8 +24,21 @@ namespace rabbitmq_sender
             //    }
             //}
 
-            // Single Message Send
-            SendTaskQueueMessage taskMessage = new SendTaskQueueMessage();
+            // Single Task Message Send to Multiple Consumers
+            //SendTaskQueueMessage taskMessage = new SendTaskQueueMessage();
+            //while (true)
+            //{
+            //    string consoleMessage = Console.ReadLine();
+            //    if (consoleMessage.Equals("q") || consoleMessage.Equals("Q"))
+            //        break;
+            //    else
+            //    {
+            //        taskMessage.sendTaskMessageToClient("localhost", "task_queue", "task_queue", consoleMessage);
+            //    }
+            //}
+
+            // Exchange Queue Message Send
+            SendExchangeQueue exchangeSendMessage = new SendExchangeQueue();
             while (true)
             {
                 string consoleMessage = Console.ReadLine();
@@ -33,7 +46,7 @@ namespace rabbitmq_sender
                     break;
                 else
                 {
-                    taskMessage.sendTaskMessageToClient("localhost", "task_queue", "task_queue", consoleMessage);
+                    exchangeSendMessage.sendMessageToClient("localhost","logs","fanout","task_queue", "task_queue", consoleMessage);
                 }
             }
 
